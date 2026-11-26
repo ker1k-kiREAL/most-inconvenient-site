@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ВХОД В СИСТЕМУ (ОФИЦИАЛЬНО)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ticker">Статус: система работает исправно. Мы вас предупреждали. Страница будет перезагружена через <b id="timer">10</b> с (может быть).</div>
+
+<h1 class="shake">ВХОД В СИСТЕМУ</h1>
+<p class="subtitle">Уважаемый пользователь! Для входа введите логин. Максимум 1 символ. Это требование законодательства, совести и одного очень умного разработчика. Всё, что вы наберёте сверх нормы, честно падает в корзину. Без возврата.</p>
+
+<form id="loginForm" autocomplete="off" novalidate>
+  <label for="login">ЛОГИН (МАКС. 1 СИМВОЛ)</label>
+  <input type="text" id="login" placeholder="ПОДУМАЙТЕ ХОРОШО" spellcheck="false">
+  <div class="hint" id="loginHint">Свободных символов: 1 из 1</div>
+
+  <label for="password">ПАРОЛЬ (ВИДЕН ВСЕМ, ЧТОБЫ ВЫ ТОЖЕ НЕ ЗАБЫЛИ)</label>
+  <input type="text" id="password" placeholder="введите пароль, не стесняйтесь">
+
+  <div class="captcha">
+    <div>Проверка на человека: сколько будет 6 &times; 7?</div>
+    <input type="text" id="captcha" maxlength="1" placeholder="?">
+    <div class="hint">Ой. Ответ почему-то не влезает. Техподдержка уволена.</div>
+  </div>
+
+  <label class="agree"><input type="checkbox" id="agree"> Согласен со всеми правилами, которые не читал, но уверен, что они хорошие</label>
+
+  <div class="btnArea">
+    <button type="submit" id="enterBtn">ВОЙТИ</button>
+    <button type="button" id="cancelBtn">Отмена</button>
+  </div>
+</form>
+
+<div class="trash" id="trash">
+  🗑 Корзина символов: <span id="trashCount">0</span>
+  <div class="trashNote">Очистка недоступна: менеджер по корзинам на обеде (с 1998 года).</div>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modalBox">
+    <h2 id="modalTitle">ОШИБКА</h2>
+    <p id="modalText"></p>
+    <button id="modalBtn">ОК (не важно)</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
